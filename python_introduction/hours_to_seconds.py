@@ -1,5 +1,5 @@
 seconds = 60
-A_minute = seconds
+a_minute = seconds
 minutes = 60
 hour = minutes
 hours = 2 
