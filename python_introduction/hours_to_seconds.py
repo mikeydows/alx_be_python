@@ -1,10 +1,7 @@
-seconds = 60
-a_minute = seconds
+second = 60
 minutes = 60
-hour = minutes
-hours = 2 
-minutes_to_hours = minutes * hours
-hours_to_seconds = minutes_to_hours * seconds
-
-print(hours, "hours is", hours_to_seconds, "seconds")
+hours = 2
+hour = second * minutes
+seconds = hour * hours
+print(hours, "hours is", seconds, "seconds")
 
