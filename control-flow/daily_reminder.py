@@ -4,15 +4,17 @@ time_bound = input("Is the task time-bound? (yes/no): ").lower()
 
 match priority:
     case "high":
-        reminder = f"Reminder: {task} [Priority: HIGH]"
+        reminder = f"Note: '{task}' is a {priority} priority task"
     case "medium":
-        reminder = f"Reminder: {task} [Priority: MEDIUM]"
+        reminder = f"Note: '{task}' is a {priority} priority task"
     case "low":
-        reminder = f"Reminder: {task} [Priority: LOW]"
+        reminder = f"Note: '{task}' is a {priority} priority task."
     case _:
         reminder = f"Reminder: {task} [Priority: UNKNOWN]"
 
 if time_bound == "yes":
-    reminder += " - that requires immediate attention today!"
+    reminder += " that requires immediate attention today!"
+else:
+    reminder += " Consider completing it when you have free time."
 
 print(reminder)
