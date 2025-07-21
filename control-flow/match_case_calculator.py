@@ -1,23 +1,24 @@
-num1 = int(input("Enter the first number: "))
-num2 = int(input("Enter the second number: "))
+# Prompt for user input
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+operation = input("Choose the operation (+, -, *, /): ")
 
-choose = input("Choose the operation (+, =, *, /):")
-
-match choose:
-    case choose1:
-        if choose == "+":
-            results = num1+num2
-            print(f"The result is {results}")
-        elif choose == "-":
-            results = num1-num2
-            print(f"The result is {results}")
-        elif choose == "*":
-            results = num1*num2
-            print(f"The result is {results}")
-        elif choose == "/":
-            results = num1/num2
-            print(f"The result is {results}")
+# Perform the calculation using match-case (Python 3.10+)
+match operation:
+    case "+":
+        result = num1 + num2
+        print(f"The result is {result}")
+    case "-":
+        result = num1 - num2
+        print(f"The result is {result}")
+    case "*":
+        result = num1 * num2
+        print(f"The result is {result}")
+    case "/":
+        if num2 != 0:
+            result = num1 / num2
+            print(f"The result is {result}")
         else:
-            print("sorry")
-
-                
+            print("Error: Division by zero is not allowed.")
+    case _:
+        print("Invalid operation selected.")
