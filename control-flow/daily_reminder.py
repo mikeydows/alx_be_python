@@ -20,30 +20,16 @@ while True:
 # Match-case for priority response
 match priority:
     case "high":
-        reminder = f"Reminder: '{task}' is a high priority task"
+        reminder = f"'{task}' is a high priority task"
     case "medium":
-        reminder = f"Note: '{task}' is a medium priority task"
+        reminder = f"'{task}' is a medium priority task"
     case "low":
-        reminder = f"Note: '{task}' is a low priority task"
+        reminder = f"'{task}' is a low priority task"
     case _:
-        reminder = f"Reminder: '{task}' has an unknown priority"
+        reminder = f"'{task}' has an unknown priority"
 
-# Time sensitivity
-#if time_bound == "yes":
- #   reminder += " that requires immediate attention today!"
-#else:
- #   reminder += ". Consider completing it when you have time."
-
-# Final customized reminder
-#print("\n🔔 Reminder Details:")
-#print(f"Task       : {task}")
-#print(f"Priority   : {priority.upper()}")
-
+# Final customized reminder with required format
 if time_bound == "yes":
-    print("⏱️ Action   : This task is time-sensitive — act immediately!")
+    print(f"Reminder: {reminder} that requires immediate attention!")
 else:
-    print("⏳ Action   : This task is not time-sensitive — plan accordingly.")
-
-
-# Final reminder
-print("\n" + reminder)
+    print(f"Reminder: {reminder}. It's not time-sensitive.")
