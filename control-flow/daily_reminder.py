@@ -35,9 +35,9 @@ match priority:
  #   reminder += ". Consider completing it when you have time."
 
 # Final customized reminder
-print("\n🔔 Reminder Details:")
-print(f"Task       : {task}")
-print(f"Priority   : {priority.upper()}")
+#print("\n🔔 Reminder Details:")
+#print(f"Task       : {task}")
+#print(f"Priority   : {priority.upper()}")
 
 if time_bound == "yes":
     print("⏱️ Action   : This task is time-sensitive — act immediately!")
