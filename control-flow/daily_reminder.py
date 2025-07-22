@@ -29,10 +29,21 @@ match priority:
         reminder = f"Reminder: '{task}' has an unknown priority"
 
 # Time sensitivity
+#if time_bound == "yes":
+ #   reminder += " that requires immediate attention today!"
+#else:
+ #   reminder += ". Consider completing it when you have time."
+
+# Final customized reminder
+print("\n🔔 Reminder Details:")
+print(f"Task       : {task}")
+print(f"Priority   : {priority.upper()}")
+
 if time_bound == "yes":
-    reminder += " that requires immediate attention today!"
+    print("⏱️ Action   : This task is time-sensitive — act immediately!")
 else:
-    reminder += ". Consider completing it when you have much time."
+    print("⏳ Action   : This task is not time-sensitive — plan accordingly.")
+
 
 # Final reminder
 print("\n" + reminder)
