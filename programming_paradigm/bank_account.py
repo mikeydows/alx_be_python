@@ -6,7 +6,7 @@ class BankAccount:
     def deposit(self, amount):
         """Add money to the account and print confirmation."""
         self.account_balance += amount
-        print(f"Deposited: ${amount:.2f}")
+        print(f"Deposited: ${amount:.1f}")  # Matches test: $67.0
 
     def withdraw(self, amount):
         """Withdraw money if sufficient funds exist; else print error."""
@@ -14,8 +14,9 @@ class BankAccount:
             print("Insufficient funds.")
         else:
             self.account_balance -= amount
-            print(f"Withdrew: ${amount:.2f}")
+            print(f"Withdrew: ${amount:.1f}")
 
     def display_balance(self):
         """Print the current account balance."""
         print(f"Current Balance: ${self.account_balance:.2f}")
+
