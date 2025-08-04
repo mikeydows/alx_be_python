@@ -3,10 +3,8 @@ def safe_divide(numerator, denominator):
         num = float(numerator)
         denom = float(denominator)
         result = num / denom
-        return f"Result: {result:.2f}"
-
+        print(f"Result: {result}")
     except ZeroDivisionError:
-        return "Error: Division by zero is not allowed."
-
+        print("Error: Division by zero is not allowed.")
     except ValueError:
-        return "Error: Both inputs must be numeric."
+        print("Error: Both inputs must be numeric.")
