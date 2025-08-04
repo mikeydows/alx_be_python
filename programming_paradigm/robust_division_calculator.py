@@ -7,7 +7,7 @@ def safe_divide(numerator, denominator):
             raise ZeroDivisionError
 
         result = num / denom
-        print(f"Result: {result}")
+        print(f"The result of the division is {result}")
 
     except ValueError:
         print("Error: Please enter numeric values only.")
