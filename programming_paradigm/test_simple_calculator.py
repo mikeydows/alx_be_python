@@ -4,19 +4,27 @@ from simple_calculator import SimpleCalculator
 class TestSimpleCalculator(unittest.TestCase):
 
     def setUp(self):
-        """Initialize a new calculator instance before each test."""
         self.calc = SimpleCalculator()
 
-    # Minimal required test method for checker
+    # -------------------------
+    # REQUIRED METHOD NAMES FOR CHECKER
+    # -------------------------
     def test_addition(self):
         self.assertEqual(self.calc.add(2, 3), 5)
-        self.assertEqual(self.calc.add(-1, -4), -5)
 
     def test_subtraction(self):
-        self.assertEqual(self.calc.subtract(10, 5), 5)
-        self.assertEqual(self.calc.subtract(5, 10), -5)
+        self.assertEqual(self.calc.subtract(5, 2), 3)
 
-    # You can still keep your detailed test cases below
+    def test_multiplication(self):
+        self.assertEqual(self.calc.multiply(3, 4), 12)
+
+    def test_division(self):
+        self.assertEqual(self.calc.divide(10, 2), 5.0)
+
+    # -------------------------
+    # YOUR ORIGINAL DETAILED TEST CASES
+    # -------------------------
+
     def test_addition_basic(self):
         self.assertEqual(self.calc.add(2, 3), 5)
         self.assertEqual(self.calc.add(-1, -4), -5)
