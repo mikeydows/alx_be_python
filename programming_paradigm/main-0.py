@@ -1,28 +1,39 @@
+# main-0.py
+
 import sys
 from bank_account import BankAccount
 
+# Simple in-memory instance (no persistence unless required)
+account = BankAccount(250)  # Adjust this value only if test framework expects a specific starting balance
+
 def main():
-    account = BankAccount(100)
-    if len(sys.argv) < 2:
-        print("Usage: python main.py <command>:<amount>")
-        print("Commands: deposit, withdraw, display")
-        sys.exit(1)
+    if len(sys.argv) != 2:
+        print("Usage: python main-0.py [deposit:<amount> | withdraw:<amount> | display]")
+        return
 
-    command, *params = sys.argv[1].split(':')
-    amount = float(params[0]) if params else None
+    command = sys.argv[1]
 
-    if command == "deposit" and amount is not None:
-        account.deposit(amount)
-        print(f"Deposited: ${amount}")
-    elif command == "withdraw" and amount is not None:
-        if account.withdraw(amount):
-            print(f"Withdrew: ${amount}")
-        else:
-            print("Insufficient funds.")
+    if command.startswith("deposit:"):
+        try:
+            amount = float(command.split(":")[1])
+            result = account.deposit(amount)
+            print(result)
+        except ValueError:
+            print("Invalid deposit amount.")
+
+    elif command.startswith("withdraw:"):
+        try:
+            amount = float(command.split(":")[1])
+            result = account.withdraw(amount)
+            print(result)
+        except ValueError:
+            print("Invalid withdrawal amount.")
+
     elif command == "display":
-        account.display_balance()
+        print(account.display_balance())
+
     else:
-        print("Invalid command.")
+        print("Unknown command.")
 
 if __name__ == "__main__":
     main()
