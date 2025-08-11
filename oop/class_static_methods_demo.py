@@ -11,6 +11,6 @@ class Calculator:
         return a * b
 
 
-# Only print the expected lines
+# Prints in the expected order
 print(f"The sum is: {Calculator.add(7, 8)}")
 print(f"The product is: {Calculator.multiply(5, 10)}")
