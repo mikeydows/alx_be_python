@@ -1,5 +1,5 @@
 class Calculator:
-    calculation_type = "Arithmetic Operations"  # fixed spelling
+    calculation_type = "Arithmetic Operations"
 
     @staticmethod
     def add(a, b):
@@ -11,6 +11,6 @@ class Calculator:
         return a * b
 
 
-# Example usage
-print("Addition:", Calculator.add(3, 4))       # static method
-print("Multiplication:", Calculator.multiply(5, 6))  # class method
+# Only print the expected lines
+print(f"The sum is: {Calculator.add(7, 8)}")
+print(f"The product is: {Calculator.multiply(5, 10)}")
